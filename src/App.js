@@ -1,25 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import TableRow from './components/TableRow'
+import React from "react"
+import "./App.css"
+import Table from "./components/Table"
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    //Set initial state
+    this.state = {
+      row: 0,
+      column: 0,
+      color: ""
+    }
+
+    //Bind keyword
+    this.addRow = this.addRow.bind(this)
+    this.addColumn = this.addColumn.bind(this)
+  }
+
+  // This function adds a new row of cells
+  addRow(){
+    // When there is no cell in the beginning
+    if (this.state.row === 0 && this.state.column === 0) {
+      this.setState({row: 1, column: 1, color: ""})
+    } else {
+      this.setState({row: this.state.row + 1})
+    }
+    console.log("row: " + this.state.row + " column: " + this.state.column)
+  }
+  
+  addColumn() {
+    // When there is no cell in the beginning
+    if (this.state.row === 0 && this.state.column === 0) {
+      this.setState({row: 1, column: 1, color: ""})
+    } else {
+      this.setState({column: this.state.column + 1})
+    }
+  }
+
+
+  render() {
+    return (
+      <>
+        <main>
+            <div className= "controlPanel">
+              <div className="edit-btn">
+                <button className="control-btn" onClick={() => this.addRow()}>Add Row</button>
+                <button className="control-btn" onClick={() => this.addColumn()}>Add Column</button>
+                <button className="control-btn">Remove Row</button>
+                <button className="control-btn">Remove Column</button>
+                <button className="control-btn">Reset</button>
+              </div>
+              <div className="color-btn">
+                <button className="control-btn">Fill Unedited</button>
+                <button className="control-btn">Fill All</button>
+                <button className="control-btn">Clear All</button>
+                <button className="control-btn">Color</button>
+              </div>
+              
+              <div className="table">
+                <Table row={this.state.row} column={this.state.column} color={this.state.color}/>
+              </div>
+            </div>
+        </main>
+      </>
+    )
+  }
 }
 
 export default App;
