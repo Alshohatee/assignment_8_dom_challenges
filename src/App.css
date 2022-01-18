@@ -33,3 +33,10 @@ table {
   width: 25px;
   background-color: transparent;
 }
+
+.Selection {
+  border: solid;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 10px;
+}

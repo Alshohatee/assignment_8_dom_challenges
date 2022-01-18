@@ -24,10 +24,11 @@ class App extends React.Component {
 
     this.fillAll = this.fillAll.bind( this )
     this.clearAll = this.clearAll.bind( this )
+    this.createColor = this.createColor.bind ( this )
   }
 
   // This function adds a new row of cells
-  addRow() {
+  addRow ()  {
     // When there is no cell in the beginning
     if ( this.state.row === 0 && this.state.column === 0 ) {
       this.setState( { row: 1, column: 1, color: "" } )
@@ -91,6 +92,10 @@ class App extends React.Component {
 
   }
 
+  createColor(event) {
+    this.setState({color: event.target.value})
+  }
+
 
   render() {
     return (
@@ -109,7 +114,15 @@ class App extends React.Component {
               <button className="control-btn" onClick={() => this.fillAll()}>Fill All</button>
 
               <button className="control-btn" onClick={() => this.clearAll()}>Clear All</button>
-              <button className="control-btn">Color</button>
+              <label className="Selection">Color Selection</label>
+
+              <select id="Selection" onClick={(event) => this.createColor(event)}>
+              <option value="transparent">None</option>
+              <option value="blue">Blue</option>
+              <option value="red">Red</option>
+              <option value="yellow">Yellow</option>
+              <option value="black">Black</option>
+            </select>
             </div>
 
             <div className="table">
