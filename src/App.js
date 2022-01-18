@@ -25,7 +25,7 @@ class App extends React.Component {
 
     this.fillAll = this.fillAll.bind( this )
     this.clearAll = this.clearAll.bind( this )
-    this.fillUnedited = this.fillUnedited( this)
+    this.fillUnedited = this.fillUnedited.bind( this)
     this.createColor = this.createColor.bind ( this )
   }
 
@@ -111,9 +111,9 @@ class App extends React.Component {
 
   //This function will fill color to All Unedited Square
   fillUnedited() {
-    document.querySelectorAll("p").forEach(e => {
+    document.querySelectorAll(".square").forEach(e => {
       if(e.style.backgroundColor === "") {
-        e.style.backgroundColor = this.state.color
+        e.style.backgroundColor = this.state.color;
       }
     }
     )
@@ -133,7 +133,7 @@ class App extends React.Component {
               <button className="control-btn" onClick={() => this.removeReset()}>Reset</button>
             </div>
             <div className="color-btn">
-              <button className="control-btn" onClicked={() => this.fillUnedited()}>Fill Unedited</button>
+              <button className="control-btn" onClick={() => this.fillUnedited()}>Fill Unedited</button>
               <button className="control-btn" onClick={() => this.fillAll()}>Fill All</button>
 
               <button className="control-btn" onClick={() => this.clearAll()}>Clear All</button>
