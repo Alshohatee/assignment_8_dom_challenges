@@ -76,7 +76,7 @@ class App extends React.Component {
   }
   fillAll() {
     // Everything is default state
-    this.setState( { color: "red" } )
+    this.setState( { color: "blue" } )
 
     console.log( this.state.color )
     console.log( "fillAll " + this.state.color )
