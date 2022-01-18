@@ -26,6 +26,9 @@ nav {
 table {
   margin: auto;
 }
+.table {
+  margin-top: 70px;
+}
 
 .square {
   margin: 0;
