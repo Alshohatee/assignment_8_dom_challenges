@@ -25,12 +25,12 @@ class App extends React.Component {
 
     this.fillAll = this.fillAll.bind( this )
     this.clearAll = this.clearAll.bind( this )
-    this.fillUnedited = this.fillUnedited.bind( this)
-    this.createColor = this.createColor.bind ( this )
+    this.fillUnedited = this.fillUnedited.bind( this )
+    this.createColor = this.createColor.bind( this )
   }
 
   // This function adds a new row of cells
-  addRow ()  {
+  addRow() {
     // When there is no cell in the beginning
     if ( this.state.row === 0 && this.state.column === 0 ) {
       this.setState( { row: 1, column: 1, color: "" } )
@@ -81,11 +81,10 @@ class App extends React.Component {
 
   fillAll() {
     // Everything is default state
-    //fills all cells 
-    let fill = document.querySelectorAll(".square");
+    let fill = document.querySelectorAll( ".square" );
 
-    fill.forEach(element => element.style.backgroundColor = this.state.color);
-    
+    fill.forEach( element => element.style.backgroundColor = this.state.color );
+
 
 
     console.log( this.state.color )
@@ -95,25 +94,25 @@ class App extends React.Component {
 
   clearAll() {
     // Everything is default state
-    let clear = document.querySelectorAll(".square");
+    let clear = document.querySelectorAll( ".square" );
 
-    clear.forEach(element => element.style.backgroundColor = "");
-    
+    clear.forEach( element => element.style.backgroundColor = "" );
+
 
     console.log( this.state.color )
     console.log( "clear All" + this.state.color )
 
   }
 
-  createColor(event) {
-    this.setState({color: event.target.value})
+  createColor( event ) {
+    this.setState( { color: event.target.value } )
   }
 
 
   //This function will fill color to All Unedited Square
   fillUnedited() {
-    document.querySelectorAll(".square").forEach(e => {
-      if(e.style.backgroundColor === "") {
+    document.querySelectorAll( ".square" ).forEach( e => {
+      if ( e.style.backgroundColor === "" ) {
         e.style.backgroundColor = this.state.color;
       }
     }
@@ -150,6 +149,7 @@ class App extends React.Component {
               <option value="black">Black</option>
               <option value="grey">grey</option>
             </select>
+
             </div>
 
             <div className="table">
