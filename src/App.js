@@ -21,6 +21,8 @@ class App extends React.Component {
     this.removeRow = this.removeRow.bind( this )
     this.removeColumn = this.removeColumn.bind( this )
     this.removeReset = this.removeReset.bind( this )
+
+    this.fillAll = this.fillAll.bind( this )
   }
 
   // This function adds a new row of cells
@@ -71,6 +73,14 @@ class App extends React.Component {
 
     console.log( this.state )
   }
+  fillAll() {
+    // Everything is default state
+    this.setState( { color: "red" } )
+
+    console.log( this.state.color )
+    console.log( "color 1" + this.state.color )
+
+  }
 
 
   render() {
@@ -87,7 +97,7 @@ class App extends React.Component {
             </div>
             <div className="color-btn">
               <button className="control-btn">Fill Unedited</button>
-              <button className="control-btn">Fill All</button>
+              <button className="control-btn" onClick={() => this.fillAll()}>Fill All</button>
               <button className="control-btn">Clear All</button>
               <button className="control-btn">Color</button>
             </div>
