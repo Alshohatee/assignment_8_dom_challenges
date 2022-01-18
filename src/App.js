@@ -139,7 +139,7 @@ class App extends React.Component {
               <button className="control-btn" onClick={() => this.clearAll()}>Clear All</button>
               <label className="Selection">Color Selection</label>
 
-              <select className="colorSelection" onClick={( event ) => this.createColor( event )}>
+              <select className="colorSelection" onChange={( event ) => this.createColor( event )}>
                 <option value="transparent">None</option>
                 <option value="blue">Blue</option>
                 <option value="red">Red</option>
