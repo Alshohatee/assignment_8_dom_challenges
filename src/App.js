@@ -141,15 +141,14 @@ class App extends React.Component {
               <button className="control-btn" onClick={() => this.clearAll()}>Clear All</button>
               <label className="Selection">Color Selection</label>
 
-              <select className="colorSelection" onClick={(event) => this.createColor(event)}>
-              <option value="transparent">None</option>
-              <option value="blue">Blue</option>
-              <option value="red">Red</option>
-              <option value="yellow">Yellow</option>
-              <option value="black">Black</option>
-              <option value="grey">grey</option>
-            </select>
 
+              <select className="colorSelection" onChange={( event ) => this.createColor( event )}>
+                <option value="transparent">None</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="black">Black</option>
+              </select>
             </div>
 
             <div className="table">
