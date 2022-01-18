@@ -1,10 +1,12 @@
-main {
+body {
   margin: 0;
-  padding: 0;
 }
 
-.nav {
+nav {
   text-align: center;
+  padding: 20px;
+  width: 100%;
+  background-color: #222525;
 }
 
 .edit-btn {
@@ -45,4 +47,9 @@ table {
 .colorSelection {
   padding: 8px;
   border-radius: 12px;
+}
+.Header {
+  margin: auto;
+  font-size: 20px;
+  color: white;
 }

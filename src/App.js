@@ -81,6 +81,7 @@ class App extends React.Component {
 
   fillAll() {
     // Everything is default state
+    //fills all cells 
     let fill = document.querySelectorAll(".square");
 
     fill.forEach(element => element.style.backgroundColor = this.state.color);
@@ -122,7 +123,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
+      <div>
+        <nav><div className="Header"><h1> Canvas Painter </h1></div>
+        </nav>
         <main>
           <div className="controlPanel">
             <div className="edit-btn">
@@ -145,6 +148,7 @@ class App extends React.Component {
               <option value="red">Red</option>
               <option value="yellow">Yellow</option>
               <option value="black">Black</option>
+              <option value="grey">grey</option>
             </select>
             </div>
 
@@ -153,7 +157,7 @@ class App extends React.Component {
             </div>
           </div>
         </main>
-      </>
+      </div>
     )
   }
 }

@@ -13,9 +13,6 @@ class TableCell extends React.Component {
     boxClick = () => {
         this.setState({color: this.props.color})
     }
-    background = () => {
-        this.setState({color:this.props.color})
-    }
 
     render() {
        
