@@ -123,7 +123,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <nav><div className="Header"><h1> Canvas Painter </h1></div>
+        <nav><div className="Header"><h1> React Grid Painter </h1></div>
         </nav>
         <main>
           <div className="controlPanel">
