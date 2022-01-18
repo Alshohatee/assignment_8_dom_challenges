@@ -4,6 +4,7 @@ import React from "react"
 import "./App.css"
 import Table from "./components/Table"
 
+
 class App extends React.Component {
   constructor( props ) {
     super( props )
@@ -77,7 +78,11 @@ class App extends React.Component {
   }
   fillAll() {
     // Everything is default state
-    this.setState( { color: "blue" } )
+    let fill = document.querySelectorAll(".square");
+
+    fill.forEach(element => element.style.backgroundColor = this.state.color);
+    
+
 
     console.log( this.state.color )
     console.log( "fillAll " + this.state.color )
@@ -85,7 +90,10 @@ class App extends React.Component {
   }
   clearAll() {
     // Everything is default state
-    this.setState( { color: "" } )
+    let arr = document.querySelectorAll(".square");
+
+    arr.forEach(element => element.style.backgroundColor = "");
+    
 
     console.log( this.state.color )
     console.log( "clear All" + this.state.color )
@@ -94,6 +102,16 @@ class App extends React.Component {
 
   createColor(event) {
     this.setState({color: event.target.value})
+  }
+
+  fillUnedited () {
+     let fillUnedited = document.querySelectorAll(".square")
+
+    for(const element of fillUnedited){
+      if(element.style.backgroundColor === ""){
+        element.style.backgroundColor = this.state.color;
+      } 
+    }
   }
 
 
@@ -110,13 +128,13 @@ class App extends React.Component {
               <button className="control-btn" onClick={() => this.removeReset()}>Reset</button>
             </div>
             <div className="color-btn">
-              <button className="control-btn">Fill Unedited</button>
+              <button className="control-btn" onClick={() => this.fillUnedited()}>Fill Unedited</button>
               <button className="control-btn" onClick={() => this.fillAll()}>Fill All</button>
 
               <button className="control-btn" onClick={() => this.clearAll()}>Clear All</button>
               <label className="Selection">Color Selection</label>
 
-              <select id="Selection" onClick={(event) => this.createColor(event)}>
+              <select className="colorSelection" onClick={(event) => this.createColor(event)}>
               <option value="transparent">None</option>
               <option value="blue">Blue</option>
               <option value="red">Red</option>
