@@ -15,8 +15,12 @@ class TableCell extends React.Component {
         this.setState( { color: this.props.color } )
     }
 
-    handleMouseOver = () => {
-        this.setState( { color: this.props.color } );
+    handleMouseOver(event) {
+        if (event.buttons === 1) {
+            this.setState( { color: this.props.color } )
+        }
+        
+
     }
 
     background = () => {
@@ -32,7 +36,7 @@ class TableCell extends React.Component {
                     className="square"
                     style={{ background: this.state.color }}
                     onClick={this.boxClick}
-                    onMouseEnter={this.handleMouseOver}></p>
+                    onMouseOver={(event) => this.handleMouseOver(event)}></p>
                 </td>
 
             </>
