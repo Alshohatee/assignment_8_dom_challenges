@@ -27,8 +27,16 @@ table {
 
 .square {
   margin: 0;
+  padding: 10px;
   border: 1px black solid;
   height: 25px;
   width: 25px;
   background-color: transparent;
+}
+
+.Selection {
+  border: solid;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 10px;
 }
