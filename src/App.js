@@ -25,6 +25,7 @@ class App extends React.Component {
 
     this.fillAll = this.fillAll.bind( this )
     this.clearAll = this.clearAll.bind( this )
+    this.fillUnedited = this.fillUnedited( this)
     this.createColor = this.createColor.bind ( this )
   }
 
@@ -70,12 +71,14 @@ class App extends React.Component {
     }
     console.log( this.state )
   }
+
   removeReset() {
     // Everything is default state
     this.setState( { row: 0, column: 0, color: "" } )
 
     console.log( this.state )
   }
+
   fillAll() {
     // Everything is default state
     let fill = document.querySelectorAll(".square");
@@ -88,6 +91,7 @@ class App extends React.Component {
     console.log( "fillAll " + this.state.color )
 
   }
+
   clearAll() {
     // Everything is default state
     let arr = document.querySelectorAll(".square");
@@ -104,14 +108,15 @@ class App extends React.Component {
     this.setState({color: event.target.value})
   }
 
-  fillUnedited () {
-     let fillUnedited = document.querySelectorAll(".square")
 
-    for(const element of fillUnedited){
-      if(element.style.backgroundColor === ""){
-        element.style.backgroundColor = this.state.color;
-      } 
+  //This function will fill color to All Unedited Square
+  fillUnedited() {
+    document.querySelectorAll("p").forEach(e => {
+      if(e.style.backgroundColor === "") {
+        e.style.backgroundColor = this.state.color
+      }
     }
+    )
   }
 
 
@@ -128,7 +133,7 @@ class App extends React.Component {
               <button className="control-btn" onClick={() => this.removeReset()}>Reset</button>
             </div>
             <div className="color-btn">
-              <button className="control-btn" onClick={() => this.fillUnedited()}>Fill Unedited</button>
+              <button className="control-btn" onClicked={() => this.fillUnedited()}>Fill Unedited</button>
               <button className="control-btn" onClick={() => this.fillAll()}>Fill All</button>
 
               <button className="control-btn" onClick={() => this.clearAll()}>Clear All</button>
