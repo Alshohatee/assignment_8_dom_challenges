@@ -94,9 +94,9 @@ class App extends React.Component {
 
   clearAll() {
     // Everything is default state
-    let arr = document.querySelectorAll(".square");
+    let clear = document.querySelectorAll(".square");
 
-    arr.forEach(element => element.style.backgroundColor = "");
+    clear.forEach(element => element.style.backgroundColor = "");
     
 
     console.log( this.state.color )
