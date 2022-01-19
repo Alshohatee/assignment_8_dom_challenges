@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/assignment_8_dom_challenges/static/css/main.fb274cc0.chunk.css",
+    "main.js": "/assignment_8_dom_challenges/static/js/main.fc0e11da.chunk.js",
+    "main.js.map": "/assignment_8_dom_challenges/static/js/main.fc0e11da.chunk.js.map",
+    "runtime~main.js": "/assignment_8_dom_challenges/static/js/runtime~main.46466a30.js",
+    "runtime~main.js.map": "/assignment_8_dom_challenges/static/js/runtime~main.46466a30.js.map",
+    "static/js/2.ec677add.chunk.js": "/assignment_8_dom_challenges/static/js/2.ec677add.chunk.js",
+    "static/js/2.ec677add.chunk.js.map": "/assignment_8_dom_challenges/static/js/2.ec677add.chunk.js.map",
+    "index.html": "/assignment_8_dom_challenges/index.html",
+    "precache-manifest.8cdd1807199db264fd6426098fe881f7.js": "/assignment_8_dom_challenges/precache-manifest.8cdd1807199db264fd6426098fe881f7.js",
+    "service-worker.js": "/assignment_8_dom_challenges/service-worker.js",
+    "static/css/main.fb274cc0.chunk.css.map": "/assignment_8_dom_challenges/static/css/main.fb274cc0.chunk.css.map"
+  }
+}
